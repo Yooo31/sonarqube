@@ -11,6 +11,10 @@ services:
       - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
       - sonar.jdbc.username=${USER}
       - sonar.jdbc.password=${PASSWORD}
+      - SONAR_SEARCH_JAVAOPTS=-Xms128m -Xmx256m
+      - SONAR_WEB_JAVAOPTS=-Xms64m -Xmx128m
+      - SONAR_CE_JAVAOPTS=-Xms64m -Xmx128m
+      - JAVA_OPTS=-Xms128m -Xmx512m
     volumes:
       - sonarqube_conf:/opt/sonarqube/conf
       - sonarqube_data:/opt/sonarqube/data
